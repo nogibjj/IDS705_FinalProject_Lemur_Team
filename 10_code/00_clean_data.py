@@ -16,5 +16,5 @@ data_ohe = pd.get_dummies(data, columns=categorical_cols)
 
 data_ohe.info()
 
-output_path = "../01_transformed_data/adult_ohe.csv" 
+output_path = "../01_clean_data/adult_ohe.csv" 
 data_ohe.to_csv(output_path, index=False)
