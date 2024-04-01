@@ -7,6 +7,9 @@ data = pd.read_csv(path)
 data =  data.replace('?', None)
 data['income'] = data['income'].replace({'<=50K.': 0, '<=50K': 0,  '>50K': 1,  '>50K.': 1})
 
+data.insert(0, 'income', data.pop('income'))
+
+
 categorical_cols = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
 
 data_ohe = pd.get_dummies(data, columns=categorical_cols)
