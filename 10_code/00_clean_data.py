@@ -22,6 +22,6 @@ categorical_cols = ['workclass', 'education', 'marital-status', 'occupation', 'r
 
 data_ohe = pd.get_dummies(data, columns=categorical_cols)
 
-output_path = "../01_clean_data/adult_ohe.csv" 
+output_path = "../01_clean_data/adultohe.csv" 
 data_ohe.to_csv(output_path, index=False)
 
