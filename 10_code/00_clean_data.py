@@ -13,7 +13,7 @@ data['native-country_United-States'] = (data['native-country'] == 'United-States
 data.drop('native-country', axis=1, inplace=True)
 
 numeric_cols = ['age', 'fnlwgt', 'education-num', 'capital-gain',
-       'capital-loss', 'hours-per-week', 'native-country_United-States']
+       'capital-loss', 'hours-per-week']
 scaler = StandardScaler()
 data[numeric_cols] = scaler.fit_transform(data[numeric_cols])
 
