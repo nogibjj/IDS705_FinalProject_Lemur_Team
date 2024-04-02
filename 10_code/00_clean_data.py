@@ -10,9 +10,15 @@ data =  data.replace('?', None)
 data['income'] = data['income'].replace({'<=50K.': 0, '<=50K': 0,  '>50K': 1,  '>50K.': 1})
 
 data.insert(0, 'income', data.pop('income'))
+data['native-country_United-States'] = (data['native-country'] == 'United-States').astype(int)
+data.drop('native-country', axis=1, inplace=True)
+
+numeric_cols = data.select_dtypes(include=['int64', 'float64']).columns
+scaler = StandardScaler()
+data[numeric_cols] = scaler.fit_transform(data[numeric_cols])
 
 
-categorical_cols = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country']
+categorical_cols = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex']
 
 data_ohe = pd.get_dummies(data, columns=categorical_cols)
 
