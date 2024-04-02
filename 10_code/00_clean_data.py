@@ -20,6 +20,6 @@ data[numeric_cols] = scaler.fit_transform(data[numeric_cols])
 categorical_cols = ['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex']
 data_ohe = pd.get_dummies(data, columns=categorical_cols)
 data_ohe
-output_path = "../01_clean_data/adultohe.csv" 
+output_path = "../01_clean_data/adult_ohe.csv" 
 data_ohe.to_csv(output_path, index=False)
 
