@@ -61,7 +61,6 @@ categorical_cols = [
 ]
 
 feature_names = data.columns.tolist()[1:]
-print(feature_names)
 
 # define categorical and numerical indices for later preprocessing
 categorical_columns_indices = [feature_names.index(cn) for cn in categorical_cols]
