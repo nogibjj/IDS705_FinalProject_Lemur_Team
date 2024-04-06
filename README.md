@@ -20,3 +20,8 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 ```
+
+
+To generate the ROC and Precision-Recall curves, please add the probabilities of the positive class for 20% of the test data to the "results" folder (in a format similar to the one we used on Kaggle with Kyle).
+
+Link: [https://github.com/nogibjj/IDS705_FinalProject_Lemur_Team/tree/main/40_results](https://github.com/nogibjj/IDS705_FinalProject_Lemur_Team/tree/main/40_results)
