@@ -81,4 +81,67 @@ encoded_df = pd.DataFrame(encoded_data.toarray(), columns=new_column_names)
 data = data.drop(categorical_cols, axis=1)
 data = pd.concat([data, encoded_df], axis=1)
 
+import pandas as pd
+
+# Assuming 'data' is your DataFrame
+new_names = {
+    'income': 'Income',
+    'age': 'Age',
+    'education-num': 'Education Level',
+    'capital-gain': 'Dollar gain of capital',
+    'capital-loss': 'Dollar loss of capital',
+    'hours-per-week': 'Working hours per week',
+    'native-country_United-States_0': 'US Native: (No)',
+    'native-country_United-States_1': 'US Native: (Yes)',
+    'workclass_Federal-gov': 'Work Class: Federal Government',
+    'workclass_Local-gov': 'Work Class: Local Government',
+    'workclass_Never-worked': 'Work Class: Never Worked',
+    'workclass_Private': 'Work Class: Private',
+    'workclass_Self-emp-inc': 'Work Class: Self Employed (Incorporated)',
+    'workclass_Self-emp-not-inc': 'Work Class: Self Employed (Not Incorporated)',
+    'workclass_State-gov': 'Work Class: State Government',
+    'workclass_Without-pay': 'Work Class: Without Pay',
+    'workclass_None': 'Work Class: None',
+    'workclass_nan': 'Work Class: Not Available',
+    'marital-status_Divorced': 'Marital Status: Divorced',
+    'marital-status_Married-AF-spouse': 'Marital Status: Married (AF Spouse)',
+    'marital-status_Married-civ-spouse': 'Marital Status: Married (Civilian Spouse)',
+    'marital-status_Married-spouse-absent': 'Marital Status: Married (Spouse Absent)',
+    'marital-status_Never-married': 'Marital Status: Never Married',
+    'marital-status_Separated': 'Marital Status: Separated',
+    'marital-status_Widowed': 'Marital Status: Widowed',
+    'occupation_Adm-clerical': 'Occupation: Administrative Clerical',
+    'occupation_Armed-Forces': 'Occupation: Armed Forces',
+    'occupation_Craft-repair': 'Occupation: Craft Repair',
+    'occupation_Exec-managerial': 'Occupation: Executive Managerial',
+    'occupation_Farming-fishing': 'Occupation: Farming Fishing',
+    'occupation_Handlers-cleaners': 'Occupation: Handlers Cleaners',
+    'occupation_Machine-op-inspct': 'Occupation: Machine Op Inspection',
+    'occupation_Other-service': 'Occupation: Other Service',
+    'occupation_Priv-house-serv': 'Occupation: Private House Service',
+    'occupation_Prof-specialty': 'Occupation: Professional Specialty',
+    'occupation_Protective-serv': 'Occupation: Protective Service',
+    'occupation_Sales': 'Occupation: Sales',
+    'occupation_Tech-support': 'Occupation: Tech Support',
+    'occupation_Transport-moving': 'Occupation: Transport Moving',
+    'occupation_None': 'Occupation: None',
+    'occupation_nan': 'Occupation: Not Available',
+    'relationship_Husband': 'Relationship: Husband',
+    'relationship_Not-in-family': 'Relationship: Not in Family',
+    'relationship_Other-relative': 'Relationship: Other Relative',
+    'relationship_Own-child': 'Relationship: Own Child',
+    'relationship_Unmarried': 'Relationship: Unmarried',
+    'relationship_Wife': 'Relationship: Wife',
+    'race_Amer-Indian-Eskimo': 'Race: Amer Indian Eskimo',
+    'race_Asian-Pac-Islander': 'Race: Asian Pac Islander',
+    'race_Black': 'Race: Black',
+    'race_Other': 'Race: Other',
+    'race_White': 'Race: White',
+    'sex_Female': 'Sex: Female',
+    'sex_Male': 'Sex: Male'
+}
+
+data = data.rename(columns=new_names)
+
+
 data.to_csv("../01_clean_data/adult_ohe.csv", index=False)
