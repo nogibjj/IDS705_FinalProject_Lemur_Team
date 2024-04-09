@@ -85,7 +85,7 @@ import pandas as pd
 
 # Assuming 'data' is your DataFrame
 new_names = {
-    'income': 'Income',
+    'income': 'income',
     'age': 'Age',
     'education-num': 'Education Level',
     'capital-gain': 'Dollar gain of capital',
