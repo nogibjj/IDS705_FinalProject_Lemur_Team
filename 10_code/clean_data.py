@@ -39,6 +39,9 @@ data["native-country_United-States"] = (
 ).astype(int)
 data.drop("native-country", axis=1, inplace=True)
 
+data.drop("fnlwgt", axis=1, inplace=True)
+data.drop("education", axis=1, inplace=True)
+
 # grab numeric cols
 numeric_cols = [
     "age",
@@ -52,7 +55,6 @@ numeric_cols = [
 categorical_cols = [
     "native-country_United-States",
     "workclass",
-    "education",
     "marital-status",
     "occupation",
     "relationship",
