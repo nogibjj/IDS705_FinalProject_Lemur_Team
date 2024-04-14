@@ -2,6 +2,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+import sys
+import path
+
+dir = path.Path(__file__).abspath()
+sys.path.append(dir.parent.parent)
 
 
 # list of dicts to convert readable to options model was trained on
@@ -161,7 +166,9 @@ def main():
             pred_df = pd.DataFrame([inputs], columns=feature_names)
             print(pred_df)
             # load model
-            loaded_model = pickle.load(open("../websitemodel2.pkl", "rb"))
+            path_to_model = "websitemodel2.pkl"
+            with open(path_to_model, "rb") as file:
+                loaded_model = pickle.load(file)
             # make prediction
             y_pred_proba = loaded_model.predict_proba(pred_df)[:, 1]
             # write prediction
