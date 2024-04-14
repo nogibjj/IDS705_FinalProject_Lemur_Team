@@ -4,9 +4,9 @@ import numpy as np
 import pickle
 import sys
 import path
+import os
 
-dir = path.Path(__file__).abspath()
-sys.path.append(dir.parent.parent)
+path = os.path.dirname(__file__)
 
 
 # list of dicts to convert readable to options model was trained on
@@ -166,7 +166,7 @@ def main():
             pred_df = pd.DataFrame([inputs], columns=feature_names)
             print(pred_df)
             # load model
-            path_to_model = "websitemodel2.pkl"
+            path_to_model = path + "/websitemodel2.pkl"
             with open(path_to_model, "rb") as file:
                 loaded_model = pickle.load(file)
             # make prediction
