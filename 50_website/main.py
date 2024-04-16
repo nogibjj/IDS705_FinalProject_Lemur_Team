@@ -57,6 +57,25 @@ workclass_read = {
     "Never Worked": "Never-worked",
 }
 
+education_read = {
+    "Preschool": 1,
+    "Grade 1-4": 2,
+    "Grade 5-6": 3,
+    "Grade 7-8": 4,
+    "Grade 9": 5,
+    "Grade 10": 6,
+    "Grade 11": 7,
+    "Grade 12": 8,
+    "High School Graduate": 9,
+    "Some College, No Degree": 10,
+    "Associate of Vocational": 11,
+    "Associate of Academic": 12,
+    "Bachelor's": 13,
+    "Master's": 14,
+    "Professional School Degree": 15,
+    "Doctorate Degree": 16,
+}
+
 feature_names = [
     "age",
     "marital-status",
@@ -92,12 +111,26 @@ def create_input_form(short=True):
                 "Age", min_value=18, max_value=100, step=1, value=30, key="1" + name
             )
         elif feature == "education-num":
-            inputs[feature] = st.slider(
+            inputs[feature] = st.selectbox(
                 "Education Level",
-                min_value=1,
-                max_value=16,
-                step=1,
-                value=1,
+                [
+                    "Preschool",
+                    "Grade 1-4",
+                    "Grade 5-6",
+                    "Grade 7-8",
+                    "Grade 9",
+                    "Grade 10",
+                    "Grade 11",
+                    "Grade 12",
+                    "High School Graduate",
+                    "Some College, No Degree",
+                    "Associate of Vocational",
+                    "Associate of Academic",
+                    "Bachelor's",
+                    "Master's",
+                    "Professional School Degree",
+                    "Doctorate Degree",
+                ],
                 key="2" + name,
             )
         elif feature == "marital-status":
@@ -116,7 +149,7 @@ def create_input_form(short=True):
             )
         elif feature == "hours-per-week":
             inputs[feature] = st.slider(
-                "Hours per Week",
+                "Hours Worked per Week",
                 min_value=0,
                 max_value=100,
                 step=1,
@@ -223,6 +256,7 @@ def main():
         )
         if submitted:
             # convert the variables to the ones that were made readble to the models
+            inputs["education-num"] = education_read[inputs["education-num"]]
             inputs["marital-status"] = ms_read[inputs["marital-status"]]
             inputs["occupation"] = occup_read[inputs["occupation"]]
             # inputs["relationship"] = relationship_read[inputs["relationship"]]
@@ -251,6 +285,7 @@ def main():
         if submitted:
             print(inputs2)
             # convert the variables to the ones that were made readble to the models
+            inputs2["education-num"] = education_read[inputs2["education-num"]]
             inputs2["marital-status"] = ms_read[inputs2["marital-status"]]
             inputs2["occupation"] = occup_read[inputs2["occupation"]]
             inputs2["relationship"] = relationship_read[inputs2["relationship"]]
