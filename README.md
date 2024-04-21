@@ -11,17 +11,6 @@
 
 This project examines demographic, educational, and other variables to understand what drives income levels above $50,000, distinguishing middle-class earners from others. We utilized various machine learning models including Linear Regression, Naive Bayes, Decision Trees, Neural Networks, GAM, and ensemble models like XGBoost and CatBoost. Performance was measured using Accuracy, F1 Score, and AUC ROC. SHAP and partial dependence plots helped in identifying significant variables affecting income thresholds.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Background](#background)
-- [Data](#data)
-- [Methodology](#methodology)
-- [Experiments](#experiments)
-- [Conclusion](#conclusion)
-- [Contributors](#contributors)
-- [License](#license)
-
 ## Repository Structure
 
 - **00_original_data/**: This folder holds all the raw datasets as obtained before any processing or cleaning.
@@ -31,6 +20,16 @@ This project examines demographic, educational, and other variables to understan
 - **40_results/**: Results from the various machine learning models, particularly AUC curves, are stored here in CSV format.
 - **50_website/**: Here lies the frontend and backend code for the web application that allows users to interact with the models developed.
 - **README.md**: Provides an overview of the project, including its purpose, structure, and instructions for navigating the repository.
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Background](#background)
+- [Data](#data)
+- [Methodology](#methodology)
+- [Experiments](#experiments)
+- [Conclusion](#conclusion)
+- [Presentation](#presentation)
 
 ## Introduction
 
